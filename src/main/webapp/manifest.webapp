@@ -1,6 +1,6 @@
 {
-  "name": "demoApp",
-  "short_name": "demoApp",
+  "name": "webApp",
+  "short_name": "webApp",
   "icons": [
       {
           "src": "/content/images/logo-demo.png",

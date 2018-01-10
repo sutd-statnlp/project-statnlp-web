@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('demoApp')
+        .module('webApp')
         .factory('DataUtils', DataUtils);
 
     DataUtils.$inject = ['$window'];
@@ -13,7 +13,8 @@
             abbreviate: abbreviate,
             byteSize: byteSize,
             openFile: openFile,
-            toBase64: toBase64
+            toBase64: toBase64,
+            getArrayDataFromSheet: getArrayDataFromSheet
         };
 
         return service;
@@ -69,6 +70,20 @@
                 var base64Data = e.target.result.substr(e.target.result.indexOf('base64,') + 'base64,'.length);
                 cb(base64Data);
             };
+        }
+
+        function getArrayDataFromSheet(data) {
+            var array = [];
+            var attributes = data.values[0];
+            for (var i = 1; i < data.values.length; i++) {
+                var item = {};
+                var values = data.values[i];
+                for(var j = 0; j< values.length; j++){
+                    item[attributes[j]] = values[j];
+                }
+                array.push(item);
+            }
+            return array;
         }
     }
 })();

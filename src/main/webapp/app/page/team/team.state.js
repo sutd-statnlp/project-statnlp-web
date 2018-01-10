@@ -8,16 +8,16 @@
     stateConfig.$inject = ['$stateProvider'];
 
     function stateConfig($stateProvider) {
-        $stateProvider.state('home', {
-            parent: 'app',
-            url: '/',
+        $stateProvider.state('team', {
+            parent: 'page',
+            url: '/team',
             data: {
                 authorities: []
             },
             views: {
                 'content@': {
-                    templateUrl: 'app/home/home.html',
-                    controller: 'HomeController',
+                    templateUrl: 'app/page/team/team.html',
+                    controller: 'TeamController',
                     controllerAs: 'vm'
                 }
             }

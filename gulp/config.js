@@ -12,7 +12,7 @@ module.exports = {
     bower: 'src/main/webapp/bower_components/',
     tmp: 'build/tmp',
     revManifest: 'build/tmp/rev-manifest.json',
-    port: 9000,
+    port: 8000,
     apiPort: 8080,
     liveReloadPort: 35729,
     uri: 'http://localhost:',

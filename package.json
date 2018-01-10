@@ -1,7 +1,7 @@
 {
-  "name": "demo-app",
+  "name": "web-app",
   "version": "0.0.0",
-  "description": "Description for demoApp",
+  "description": "Description for webApp",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

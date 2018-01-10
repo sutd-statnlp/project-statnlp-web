@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('demoApp')
+        .module('webApp')
         .config(httpConfig);
 
     httpConfig.$inject = ['$urlRouterProvider', '$urlMatcherFactoryProvider'];

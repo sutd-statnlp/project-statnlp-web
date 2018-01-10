@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('demoApp')
+        .module('webApp')
         .factory('ParseLinks', ParseLinks);
 
     function ParseLinks () {

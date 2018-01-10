@@ -2,11 +2,12 @@
     'use strict';
 
     angular
-        .module('demoApp', [
+        .module('webApp', [
             'ngResource',
             'ngAria',
             'ui.router',
-            'angular-loading-bar'
+            'angular-loading-bar',
+            'oc.lazyLoad'
         ])
         .run(run);
 
