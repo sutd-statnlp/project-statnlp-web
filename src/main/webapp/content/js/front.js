@@ -388,6 +388,7 @@ $.fn.alignElementsSameHeight = function () {
     });
 }
 
+var windowWidth = null;
 $(window).load(function () {
 
     windowWidth = $(window).width();

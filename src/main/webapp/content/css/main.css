@@ -1,2 +1,12 @@
 .navbar-nav a {
   text-decoration: none !important; }
+
+.m-a {
+  color: white;
+  text-decoration: none !important; }
+
+.m-a-none {
+  text-decoration: none !important; }
+
+.m-home .m-button-container {
+  padding-left: 10px !important; }

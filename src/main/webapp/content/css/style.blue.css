@@ -1752,7 +1752,7 @@ fieldset[disabled] .btn-template-primary.active {
 .bar {
   position: relative;
   background: #03A9F4;
-  padding: 60px 0;
+  padding: 20px 0;
 }
 .bar.background-pentagon {
   background: url('../images/texture-bw.png') center center repeat;
@@ -2601,9 +2601,9 @@ fieldset[disabled] .btn-template-primary.active {
   color: #03A9F4;
 }
 #copyright {
-  background: #333;
-  color: #ccc;
-  padding: 50px 0;
+  background: #0277BD;
+  color: white;
+  padding: 10px 0;
   font-size: 12px;
   line-height: 28px;
 }
