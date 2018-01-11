@@ -5,10 +5,11 @@
         .module('webApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$state'];
+    HomeController.$inject = ['$scope', '$state','$ocLazyLoad'];
 
-    function HomeController ($scope, $state) {
+    function HomeController ($scope, $state,$ocLazyLoad) {
         var vm = this;
-        
+
+       
     }
 })();

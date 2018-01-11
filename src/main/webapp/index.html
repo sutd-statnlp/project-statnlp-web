@@ -1,5 +1,6 @@
 <!doctype html>
 <html class="no-js" lang="en" dir="ltr">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,23 +15,44 @@
     <!-- endinject -->
     <link rel="stylesheet" href="content/css/vendor.css">
     <!-- endbuild -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,500,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Bootstrap and Font Awesome css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Css animations  -->
+    <link href="content/css/animate.css" rel="stylesheet">
+
+    <!-- Theme stylesheet, if possible do not edit this stylesheet -->
+    <link href="content/css/style.blue.css" rel="stylesheet" id="theme-stylesheet">
+
+    <!-- owl carousel css -->
+    <link href="content/css/owl.carousel.css" rel="stylesheet">
+    <link href="content/css/owl.theme.css" rel="stylesheet">
+
     <!-- build:css content/css/main.css -->
     <link rel="stylesheet" href="content/css/main.css">
     <!-- endbuild -->
     <link rel="shortcut icon" href="favicon.ico" />
     <link rel="manifest" href="manifest.webapp" />
+
+
 </head>
+
 <body ng-app="webApp" ng-strict-di>
     <!--[if lt IE 9]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container">
-        <div class="well" ui-view="content">
+    <div id="all">
+        <header>
+            <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
+                <div ui-view="navbar">
+                </div>
+            </div>
+        </header>
+        <div ui-view="content">
             <!-- Angular views -->
-        </div>
-
-        <div class="footer" ng-cloak>
-            
         </div>
     </div>
     <noscript>
@@ -69,7 +91,23 @@
     <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
-    
+
+    <!-- #### JAVASCRIPT FILES ### -->
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')
+    </script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <script src="content/js/jquery.cookie.js"></script>
+    <script src="content/js/waypoints.min.js"></script>
+    <script src="content/js/jquery.counterup.min.js"></script>
+    <script src="content/js/jquery.parallax-1.1.3.js"></script>
+    <!-- <script src="content/js/front.js"></script> -->
+
+    <!-- owl carousel -->
+    <script src="content/js/owl.carousel.min.js"></script>
+
     <!-- build:js app/app.js  -->
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
@@ -77,6 +115,7 @@
     <script src="app/page/team/team.state.js"></script>
     <script src="app/page/team/team.controller.js"></script>
     <script src="app/page/page.state.js"></script>
+    <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/home/home.state.js"></script>
     <script src="app/home/home.controller.js"></script>
     <script src="app/components/util/truncate-words.filter.js"></script>
@@ -98,4 +137,5 @@
     <!-- endbuild -->
 
 </body>
+
 </html>
