@@ -16,7 +16,8 @@ module.exports = {
     fonts: fonts,
     common: common,
     swagger: swagger,
-    images: images
+    images: images,
+    js: js
 }
 
 function fonts() {
@@ -74,4 +75,11 @@ function images() {
         .pipe(plumber({errorHandler: handleErrors}))
         .pipe(changed(config.dist +  'bower_components'))
         .pipe(gulp.dest(config.dist +  'bower_components'));
+}
+
+function js() {
+    return gulp.src(config.app + 'content/js/**')
+        .pipe(plumber({errorHandler: handleErrors}))
+        .pipe(changed(config.dist))
+        .pipe(gulp.dest(config.dist + 'content/js/'));
 }

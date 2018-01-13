@@ -43,6 +43,7 @@ function vendor() {
             name: 'bower',
             relative: true
         }))
+        .pipe(inject(gulp.src(config.app + 'content/css/vendor-*.css')))
         .pipe(gulp.dest(config.scss)));
 }
 
