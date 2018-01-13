@@ -1,7 +1,2 @@
-# StatNLP Framework
+# StatNLP Website
 
-## Developement
-
-    npm install
-    bower install
-    gulp
