@@ -21,6 +21,13 @@
 .m-home .m-news img {
   width: 100%; }
 
+.m-home .m-slide-ol li {
+  margin: 4px;
+  margin-bottom: 0px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; }
+
 .list-inline .item {
   width: 150px; }
 
