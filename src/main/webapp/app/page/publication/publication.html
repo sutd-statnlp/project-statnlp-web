@@ -47,13 +47,48 @@
                         </div>
                         <div id="p{{item.id}}" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <p>
-                                    {{item.abstract}}
-                                </p>
+                                <div class="tabs">
+                                    <ul class="nav nav-pills nav-justified">
+                                        <li class="active">
+                                            <a href="project#tab{{item.id}}-1" data-toggle="tab">Abstraction</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="project#tab{{item.id}}-2" data-toggle="tab">Authors</a>
+                                        </li>
+                                        <li class="">
+                                            <a href="project#tab{{item.id}}-3" data-toggle="tab">Publisher</a>
+                                        </li>
+                                        <li>
+                                            <a href="project#tab{{item.id}}-4" data-toggle="tab">Download</a>
+                                        </li>
+                                    </ul>
+                                    <div class="tab-content tab-content-inverse">
+                                        <div class="tab-pane active" id="tab{{item.id}}-1">
+                                            {{item.abstract}}
+                                        </div>
+                                        <!-- /.tab -->
+                                        <div class="tab-pane" id="tab{{item.id}}-2">
+                                            {{item.authors}}
+                                        </div>
+                                        <!-- /.tab -->
+                                        <div class="tab-pane" id="tab{{item.id}}-3">
+                                            {{item.publisher}}
+                                        </div>
+                                        <!-- /.tab -->
+                                        <div class="tab-pane" id="tab{{item.id}}-4">
+                                            <div class="buttons">
 
-                                <div class="buttons">
-                                    <a href="" class="btn btn-template-main">
-                                        <i class="fa fa-link"></i> Read more</a>
+                                                <a ng-hide="{{item.paperUrl == null}}" href="{{item.paperUrl}}" class="btn btn-template-main">
+                                                    <i class="fa fa-download"></i>Paper</a>
+                                                <a ng-hide="{{item.sourceUrl == null}}" href="{{item.sourceUrl}}" class="btn btn-template-main">
+                                                    <i class="fa fa-code"></i>Code</a>
+                                                <a ng-hide="{{item.suppUrl == null}}" href="{{item.suppUrl}}" class="btn btn-template-main">
+                                                    <i class="fa fa-plus"></i>Supplementary</a>
+                                            </div>
+
+                                        </div>
+                                        <!-- /.tab -->
+                                    </div>
                                 </div>
                             </div>
 
