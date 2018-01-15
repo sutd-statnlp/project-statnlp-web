@@ -9,7 +9,7 @@
     function NewsService($resource,DataService) {
 
         return $resource('', {}, {
-            'getHotNews': { method: 'GET', url: DataService.getApiEndpoint('News', 'A1', 'H5') }
+            'getHotNews': { method: 'GET', cache: true, url: DataService.getApiEndpoint('News', 'A1', 'H5') }
         });
 
     }
