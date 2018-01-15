@@ -1,0 +1,134 @@
+<section class="m-project">
+    <div class="container" cg-busy="vm.promise">
+        <div class="row portfolio">
+
+            <div class="col-sm-6">
+                <section>
+
+                    <div class="panel-group" id="accordion1">
+
+                        <div ng-repeat="item in vm.projects.slice(0,3)" class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+
+                                    <a class="text-capitalize m-a-none" data-toggle="collapse" data-parent="#accordion1" href="project#p{{item.id}}">
+                                        {{item.title}}
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="p{{item.id}}" class="panel-collapse collapse">
+                                <div class="panel-body">
+
+                                    <div class="tabs">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li class="active">
+                                                <a href="project#tab{{item.id}}-1" data-toggle="tab">Abstraction</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="project#tab{{item.id}}-2" data-toggle="tab">PI Co-PI</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="project#tab{{item.id}}-3" data-toggle="tab">Funding Agency</a>
+                                            </li>
+                                            <li>
+                                                <a href="project#tab{{item.id}}-4" data-toggle="tab">Support Period</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content tab-content-inverse">
+                                            <div class="tab-pane active" id="tab{{item.id}}-1">
+                                                {{item.abstract}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-2">
+                                                {{item.pi}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-3">
+                                                {{item.fundingAgency}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-4">
+                                                {{item.supportPeriod}}
+                                            </div>
+                                            <!-- /.tab -->
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel -->
+
+                    </div>
+                    <!-- /.panel -->
+                </section>
+            </div>
+            <!-- /.panel-group -->
+            <div class="col-sm-6">
+                <section>
+
+                    <div class="panel-group" id="accordion2">
+
+                        <div ng-repeat="item in vm.projects.slice(3,6)" class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+
+                                    <a class="text-capitalize m-a-none" data-toggle="collapse" data-parent="#accordion2" href="project#p{{item.id}}">
+                                        {{item.title}}
+                                    </a>
+
+                                </h4>
+                            </div>
+                            <div id="p{{item.id}}" class="panel-collapse collapse">
+                                <div class="panel-body">
+                                    <div class="tabs">
+                                        <ul class="nav nav-pills nav-justified">
+                                            <li class="active">
+                                                <a href="project#tab{{item.id}}-1" data-toggle="tab">Abstraction</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="project#tab{{item.id}}-2" data-toggle="tab">PI Co-PI</a>
+                                            </li>
+                                            <li class="">
+                                                <a href="project#tab{{item.id}}-3" data-toggle="tab">Funding Agency</a>
+                                            </li>
+                                            <li>
+                                                <a href="project#tab{{item.id}}-4" data-toggle="tab">Support Period</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content tab-content-inverse">
+                                            <div class="tab-pane active" id="tab{{item.id}}-1">
+                                                {{item.abstract}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-2">
+                                                {{item.pi}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-3">
+                                                {{item.fundingAgency}}
+                                            </div>
+                                            <!-- /.tab -->
+                                            <div class="tab-pane" id="tab{{item.id}}-4">
+                                                {{item.supportPeriod}}
+                                            </div>
+                                            <!-- /.tab -->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!-- /.panel -->
+
+                    </div>
+                    <!-- /.panel -->
+                </section>
+            </div>
+            <!-- /.panel-group -->
+
+        </div>
+
+    </div>
+</section>
