@@ -19,6 +19,8 @@
     <!-- build:css content/css/vendor.css -->
     <!-- bower:css -->
 
+    <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css">
+
     <!-- endinject -->
     <link rel="stylesheet" href="content/css/vendor-animate.css">
     <link href="content/css/vendor-style-blue.css" rel="stylesheet" id="theme-stylesheet">
@@ -60,9 +62,10 @@
             <!-- Angular views -->
         </div>
 
-        <div ui-view="footer">
-            <!-- Angular views -->
-        </div>
+
+    </div>
+    <div ui-view="footer">
+        <!-- Angular views -->
     </div>
     <noscript>
         <h1>You must enable javascript to view this page.</h1>
@@ -84,18 +87,20 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/oclazyload/dist/ocLazyLoad.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-busy/dist/angular-busy.js"></script>
     <!-- endinject -->
     <!-- endbuild -->
 
     <!-- #### JAVASCRIPT FILES ### -->
 
-    <script async src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script async src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
     <script async src="content/js/jquery.cookie.js"></script>
     <script async src="content/js/waypoints.min.js"></script>
     <script async src="content/js/jquery.counterup.min.js"></script>
     <script async src="content/js/jquery.parallax-1.1.3.js"></script>
-    <!-- <script src="content/js/front.js"></script> -->
+
 
     <!-- owl carousel -->
     <script async src="content/js/owl.carousel.min.js"></script>
@@ -103,11 +108,17 @@
     <!-- build:js app/app.js  -->
     <!-- inject:js -->
     <script src="app/app.module.js"></script>
+    <script src="app/services/tutorial.service.js"></script>
+    <script src="app/services/publication.service.js"></script>
     <script src="app/services/project.service.js"></script>
     <script src="app/services/news.service.js"></script>
     <script src="app/services/data.service.js"></script>
+    <script src="app/page/tutorial/tutorial.state.js"></script>
+    <script src="app/page/tutorial/tutorial.controller.js"></script>
     <script src="app/page/team/team.state.js"></script>
     <script src="app/page/team/team.controller.js"></script>
+    <script src="app/page/publication/publication.state.js"></script>
+    <script src="app/page/publication/publication.controller.js"></script>
     <script src="app/page/page.state.js"></script>
     <script src="app/layouts/navbar/navbar.controller.js"></script>
     <script src="app/layouts/footer/footer.controller.js"></script>

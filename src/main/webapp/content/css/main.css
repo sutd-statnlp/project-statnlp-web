@@ -1,6 +1,9 @@
 .navbar-nav a {
   text-decoration: none !important; }
 
+.navbar {
+  box-shadow: 0px 0px 10px grey; }
+
 .m-a {
   color: white;
   text-decoration: none !important; }
@@ -10,3 +13,39 @@
 
 .m-home .m-button-container {
   padding-left: 10px !important; }
+
+.m-home .m-slider {
+  width: 100%;
+  padding: 10px; }
+
+.m-home .m-news img {
+  width: 100%; }
+
+.list-inline .item {
+  width: 150px; }
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background-color: white; }
+
+.m-tutorial .container {
+  padding: 0px;
+  padding-top: 10px;
+  min-height: calc(100vh - 150px); }
+
+.m-tutorial .card {
+  padding: 10px;
+  margin: 16px; }
+
+.center {
+  margin: 0 auto;
+  width: 100%; }
+
+.justify-content-center {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  justify-content: center !important; }
+
+.m-publication .container {
+  padding-top: 20px;
+  min-height: calc(100vh - 150px); }

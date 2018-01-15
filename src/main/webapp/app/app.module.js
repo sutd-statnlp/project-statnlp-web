@@ -6,7 +6,9 @@
             'ngResource',
             'ngAria',
             'ui.router',
-            'oc.lazyLoad'
+            'oc.lazyLoad',
+            'ngAnimate',
+            'cgBusy'
         ])
         .run(run);
 

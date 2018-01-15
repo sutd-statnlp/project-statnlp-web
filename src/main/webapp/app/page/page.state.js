@@ -9,6 +9,7 @@
 
     function stateConfig($stateProvider) {
         $stateProvider.state('page', {
+            parent: 'app',
             abstract: true
         });
     }

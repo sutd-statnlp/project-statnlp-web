@@ -5,9 +5,9 @@
         .module('webApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$state', 'NewsService','DataUtils','ProjectService'];
+    HomeController.$inject = ['$scope', '$state', 'NewsService', 'DataUtils', 'ProjectService'];
 
-    function HomeController($scope, $state, NewsService,DataUtils,ProjectService) {
+    function HomeController($scope, $state, NewsService, DataUtils, ProjectService) {
         var vm = this;
 
         vm.news = [];
@@ -36,5 +36,7 @@
         function onError(error) {
             console.log(error);
         }
+
+       
     }
 })();
