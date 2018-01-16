@@ -23,16 +23,16 @@ const fileManifest = [
     "revision": "6b0e453869784a1e09074b86160d9689"
   },
   {
-    "url": "app/app-6ad6113e2a.js",
-    "revision": "2ab391c9d36e202373979264ddb8aee6"
+    "url": "app/app-da21e1eb0c.js",
+    "revision": "cbfe2db6ba00f52c36d8d23aac75372c"
   },
   {
-    "url": "app/vendor-5cc2b4892d.js",
-    "revision": "5cc2b4892d80968ece10b78328559828"
+    "url": "app/vendor-7897dec923.js",
+    "revision": "7897dec9232f34c8755469d45c949f41"
   },
   {
-    "url": "content/css/main-4e58d513d9.css",
-    "revision": "4e58d513d95f11e1180a4052146731f1"
+    "url": "content/css/main-2fae775cb5.css",
+    "revision": "2fae775cb55675ab8618a10c43ef92d7"
   },
   {
     "url": "content/css/vendor-aed7287c65.css",
@@ -273,6 +273,38 @@ const fileManifest = [
   {
     "url": "content/images/mpost-4-93c9f72aae.jpg",
     "revision": "93c9f72aaefec5835a54d1e204b71721"
+  },
+  {
+    "url": "content/images/mseminar-1-f831db5a92.jpg",
+    "revision": "f831db5a92688f7fd7a3e04818677fe3"
+  },
+  {
+    "url": "content/images/mseminar-2-84a6610e48.jpg",
+    "revision": "84a6610e480233bc5f8f6dfe03bd4632"
+  },
+  {
+    "url": "content/images/mseminar-3-b796aacc85.jpg",
+    "revision": "b796aacc85398df4b649d07b96aac249"
+  },
+  {
+    "url": "content/images/mseminar-4-a50e77920b.jpg",
+    "revision": "a50e77920bee0c32cf31ca1b04c6e32f"
+  },
+  {
+    "url": "content/images/mseminar-5-59e194ac5d.jpg",
+    "revision": "59e194ac5d6ed15e07ba851b19ec1e94"
+  },
+  {
+    "url": "content/images/mseminar-6-500ebc45a1.jpg",
+    "revision": "500ebc45a1a50d57f17e25525fb3c861"
+  },
+  {
+    "url": "content/images/mseminar-7-84fcbd1a3e.png",
+    "revision": "84fcbd1a3e32ac0be293a80c7aba3067"
+  },
+  {
+    "url": "content/images/mseminar-8-7a721e228a.jpg",
+    "revision": "7a721e228a3cc3d9d59ab2b9c488f4d5"
   },
   {
     "url": "content/images/msutd-logo-19f57991f4.png",
@@ -544,7 +576,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "ab71fde97f88a07e6aa1770ffbf3229b"
+    "revision": "5ff3ad8d219268703ddc15e6fd3185b0"
   }
 ];
 
