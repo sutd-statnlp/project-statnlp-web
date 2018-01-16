@@ -5,16 +5,17 @@
         .module('webApp')
         .controller('TeamController', TeamController);
 
-    TeamController.$inject = ['$scope', '$state', 'DataService','DataUtils'];
+    TeamController.$inject = ['$scope', '$state', 'TeamService','DataUtils'];
 
-    function TeamController($scope, $state, DataService,DataUtils) {
+    function TeamController($scope, $state, TeamService,DataUtils) {
         var vm = this;
         vm.teamMembers = [];
+        vm.promise = {};
 
         loadTeamMembers();
 
         function loadTeamMembers() {
-            DataService.getMembers({}, onSuccess, onError);
+            vm.promise = TeamService.getMembers({}, onSuccess, onError);
 
             function onSuccess(data) {
                 vm.teamMembers = DataUtils.getArrayDataFromSheet(data);
