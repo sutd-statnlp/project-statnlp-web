@@ -106,3 +106,14 @@
         }
     }
 }
+
+.m-news {
+    .container {
+        padding-top: 20px;
+        min-height: calc(100vh - 150px);
+
+        img {
+            width: 100%;
+        }
+    }
+}

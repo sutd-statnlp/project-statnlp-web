@@ -70,3 +70,9 @@
   min-height: calc(100vh - 150px); }
   .m-dataset .container .package-header h4 {
     color: white; }
+
+.m-news .container {
+  padding-top: 20px;
+  min-height: calc(100vh - 150px); }
+  .m-news .container img {
+    width: 100%; }
