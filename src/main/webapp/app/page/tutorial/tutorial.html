@@ -1,7 +1,7 @@
 <!-- White boxes -->
 <section class="m-tutorial">
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" cg-busy="vm.promise">
             <div ng-repeat="item in vm.tutorials" class="col-md-2 card">
                 <div class="box-simple">
                     <div class="icon">
@@ -12,7 +12,7 @@
                     </a>
                     <p>{{item.description}}</p>
                     <div class="buttons">
-                        <a href="{{item.pdfUrl}}" class="btn btn-template-main">
+                        <a href="{{item.pdfUrl}}" class="btn btn-template-main" target="_blank">
                             <i class="fa fa-download"></i>Download</a>
                     </div>
                 </div>
