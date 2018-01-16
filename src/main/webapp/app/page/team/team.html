@@ -9,7 +9,7 @@
                         </a>
                     </div>
                     <h3>
-                        <a href="team-member.html">{{item.name}}</a>
+                        <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}">{{item.name}}</a>
                     </h3>
                     <p class="role">{{item.role}}</p>
                     <div class="social">

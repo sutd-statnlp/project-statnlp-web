@@ -64,3 +64,9 @@
 .m-team .container {
   padding-top: 20px;
   min-height: calc(100vh - 150px); }
+
+.m-dataset .container {
+  padding-top: 20px;
+  min-height: calc(100vh - 150px); }
+  .m-dataset .container .package-header h4 {
+    color: white; }

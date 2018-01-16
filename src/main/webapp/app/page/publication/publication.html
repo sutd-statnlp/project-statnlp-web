@@ -1,5 +1,5 @@
 <section class="m-publication">
-    <div class="container">
+    <div class="container" cg-busy="vm.promise">
 
         <div class="row">
             <div class="col-md-3">
@@ -33,7 +33,7 @@
             </div>
 
             <div class="col-md-9">
-                <div class="panel-group" id="accordion2" cg-busy="vm.promise">
+                <div class="panel-group" id="accordion2">
 
                     <div ng-repeat="item in vm.publications" class="panel panel-primary">
                         <div class="panel-heading">

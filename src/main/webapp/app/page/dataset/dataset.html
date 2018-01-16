@@ -1,0 +1,26 @@
+<section class="m-dataset">
+    <div class="container" cg-busy="vm.promise">
+        <div class="row packages">
+
+            <div ng-repeat="item in vm.datasets" class="col-md-4">
+                <div class="best-value">
+                    <div class="package">
+                        <div class="package-header">
+                            <h4>{{item.name}}</h4>
+                        </div>
+                        <ul>
+                            <li>
+                                <i class="fa fa-check"></i>{{item.description}}</li>
+                        </ul>
+                        <div class="buttons">
+                                <a href="{{item.downloadUrl}}" class="btn btn-template-main" target="_blank">
+                                    <i class="fa fa-download"></i>Download</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</section>
