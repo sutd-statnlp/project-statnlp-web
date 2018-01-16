@@ -8,7 +8,8 @@
             'ui.router',
             'oc.lazyLoad',
             'ngAnimate',
-            'cgBusy'
+            'cgBusy',
+            'infinite-scroll'
         ])
         .run(run);
 

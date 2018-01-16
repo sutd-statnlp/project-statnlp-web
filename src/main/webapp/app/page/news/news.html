@@ -1,6 +1,7 @@
 <section class="m-news">
     <div class="container">
-        <div class="row">
+        <div cg-busy="vm.promise"></div>
+        <div class="row" infinite-scroll="vm.loadMoreNews()" infinite-scroll-disabled='vm.isLoading' infinite-scroll-distance="1">
             <div ng-repeat="item in vm.news" class="col-md-3 col-sm-6 m-news">
                 <div class="box-image-text blog">
                     <div class="top">
@@ -28,7 +29,9 @@
                 <!-- /.box-image-text -->
 
             </div>
-
+           
         </div>
+        <div cg-busy="vm.promise"></div>
     </div>
+
 </section>

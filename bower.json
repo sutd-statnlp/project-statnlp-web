@@ -14,8 +14,9 @@
     "messageformat": "0.3.1",
     "modernizr": "3.3.1",
     "oclazyload": "^1.1.0",
-    "angular-animate":"1.5.8",
-    "angular-busy": "^4.1.4"
+    "angular-animate": "1.5.8",
+    "angular-busy": "^4.1.4",
+    "ngInfiniteScroll": "1.0.0"
   },
   "devDependencies": {
     "angular-mocks": "1.5.8"
@@ -24,6 +25,11 @@
     "angular": {
       "dependencies": {
         "jquery": "3.1.0"
+      }
+    },
+    "ngInfiniteScroll": {
+      "dependencies": {
+        "angular": "1.5.8"
       }
     }
   },
