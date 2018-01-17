@@ -6,6 +6,21 @@
 
                 <div class="panel panel-default sidebar-menu with-icons">
 
+                    <div class="panel panel-default sidebar-menu">
+
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Categories</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li ng-repeat="item in vm.categories">
+                                    <a href="">{{item.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
                     <div class="panel-heading">
                         <h3 class="panel-title">Years</h3>
                     </div>
@@ -22,9 +37,24 @@
                                 <a href="">2015</a>
                             </li>
                             <li>
-                                <a href="">2014</a>
+                                <a href="">2008 - 2014</a>
                             </li>
 
+                    </div>
+
+                    <div class="panel sidebar-menu">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Tags</h3>
+                        </div>
+
+                        <div class="panel-body">
+                            <ul class="tag-cloud">
+                                <li ng-repeat="item in vm.tags">
+                                    <a href="">
+                                        <i class="fa fa-tags"></i> {{item.name}}</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 

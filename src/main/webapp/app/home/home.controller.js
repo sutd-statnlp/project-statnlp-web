@@ -5,16 +5,18 @@
         .module('webApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope', '$state', 'NewsService', 'DataUtils', 'ProjectService'];
+    HomeController.$inject = ['$scope', '$state', 'NewsService', 'DataUtils', 'ProjectService', 'AgencyService'];
 
-    function HomeController($scope, $state, NewsService, DataUtils, ProjectService) {
+    function HomeController($scope, $state, NewsService, DataUtils, ProjectService, AgencyService) {
         var vm = this;
 
         vm.news = [];
         vm.projects = [];
+        vm.agencies = [];
 
         loadNews();
         loadProjects();
+        loadAgencies();
 
         function loadNews() {
             NewsService.getHotNews({}, onSuccess, onError);
@@ -33,10 +35,18 @@
             }
         }
 
+        function loadAgencies() {
+            AgencyService.getAgencies({}, onSuccess, onError);
+
+            function onSuccess(data) {
+                vm.agencies = DataUtils.getArrayDataFromSheet(data);
+            }
+        }
+
         function onError(error) {
             console.log(error);
         }
 
-       
+
     }
 })();

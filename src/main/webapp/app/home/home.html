@@ -344,34 +344,9 @@
                 </div>
 
                 <ul class="customers list-inline text-center">
-                    <li class="item">
-                        <a href="https://www.dso.org.sg/">
-                            <img src="content/images/magency-1.png" alt="" class="img-responsive">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="http://www.moe.gov.sg/">
-                            <img src="content/images/magency-2.png" alt="" class="img-responsive">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://www.mindef.gov.sg/">
-                            <img src="content/images/magency-3.png" alt="" class="img-responsive">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://www.nrf.gov.sg/">
-                            <img src="content/images/magency-4.png" alt="" class="img-responsive">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="http://www.nsfc.gov.cn/">
-                            <img src="content/images/magency-5.png" alt="" class="img-responsive">
-                        </a>
-                    </li>
-                    <li class="item">
-                        <a href="https://sutd.edu.sg/">
-                            <img src="content/images/magency-6.png" alt="" class="img-responsive">
+                    <li class="item" ng-repeat="item in vm.agencies">
+                        <a href="{{item.webUrl}}" target="_blank">
+                            <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive">
                         </a>
                     </li>
                 </ul>
