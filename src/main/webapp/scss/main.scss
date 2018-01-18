@@ -13,6 +13,10 @@
     text-decoration: none !important;
 }
 
+.m-color-white {
+    color: white !important;
+}
+
 .m-a-none {
     text-decoration: none !important;
 }
@@ -115,5 +119,15 @@
         img {
             width: 100%;
         }
+    }
+}
+
+.m-news-detail {
+    .container {
+        padding-top: 20px;
+        min-height: calc(100vh - 150px);
+    }
+    .heading {
+        margin: 0px;
     }
 }

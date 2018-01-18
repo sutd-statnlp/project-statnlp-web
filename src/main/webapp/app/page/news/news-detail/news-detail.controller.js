@@ -3,20 +3,19 @@
 
     angular
         .module('webApp')
-        .controller('PublicationController', PublicationController);
+        .controller('NewsDetailController', NewsDetailController);
 
-    PublicationController.$inject = ['$scope', '$state', 'PublicationService', 'DataUtils', 'PublicationCategoryService','TagService'];
+    NewsDetailController.$inject = ['$scope', '$state', 'entity','DataUtils','TagService','NewsCategoryService','NewsService'];
 
-    function PublicationController($scope, $state, PublicationService, DataUtils, PublicationCategoryService,TagService) {
+    function NewsDetailController($scope, $state, entity,DataUtils,TagService,NewsCategoryService,NewsService) {
         var vm = this;
-        vm.publications = [];
+        vm.news = entity;
         vm.promise = {};
-        vm.categories = [];
-        vm.tags = [];
+        vm.relatedNews = [];
 
-        loadPublications();
         loadCategories();
         loadTags();
+        loadRelatedNews();
 
         function loadTags() {
             vm.promise = TagService.getTags({}, onSuccess, onError);
@@ -27,23 +26,25 @@
         }
 
         function loadCategories() {
-            vm.promise = PublicationCategoryService.getCategories({}, onSuccess, onError);
+            vm.promise = NewsCategoryService.getCategories({}, onSuccess, onError);
 
             function onSuccess(data) {
                 vm.categories = DataUtils.getArrayDataFromSheet(data);
             }
         }
 
-        function loadPublications() {
-            vm.promise = PublicationService.getPublications({}, onSuccess, onError);
+        function loadRelatedNews() {
+            vm.promise = NewsService.getNews({}, onSuccess, onError);
 
             function onSuccess(data) {
-                vm.publications = DataUtils.getArrayDataFromSheet(data);
+                vm.relatedNews = DataUtils.getArrayDataFromSheet(data).splice(1,4);
             }
         }
+
 
         function onError(error) {
             console.log(error);
         }
+       
     }
 })();

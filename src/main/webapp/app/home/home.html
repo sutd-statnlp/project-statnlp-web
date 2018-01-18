@@ -152,18 +152,18 @@
                                 <div class="bg"></div>
                                 <div class="text">
                                     <p class="buttons">
-                                        <a href="#" class="btn btn-template-transparent-primary">
+                                        <a ui-sref="news-detail({id:item.id})" class="btn btn-template-transparent-primary">
                                             <i class="fa fa-link"></i> Read more</a>
                                     </p>
                                 </div>
                             </div>
                             <div class="content">
                                 <h4>
-                                    <a href="#" class="text-capitalize m-a-none">{{item.title}}</a>
+                                    <a ui-sref="news-detail({id:item.id})" class="text-capitalize m-a-none">{{item.title}}</a>
                                 </h4>
                                 <p class="author-category">By
-                                    <a href="#">{{item.date | date}}</a> in
-                                    <a href="#">{{item.tag}}</a>
+                                    <a href="">{{item.date | date}}</a> in
+                                    <a href="">{{item.tag}}</a>
                                 </p>
                                 <p class="intro">{{item.content | limitTo: 160 }}...</p>
 

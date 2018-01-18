@@ -54,11 +54,11 @@
     <div id="all">
         <header>
             <div class="navbar-affixed-top" data-spy="affix" data-offset-top="200">
-                <div ui-view="navbar">
+                <div ui-view="navbar" autoscroll="true">
                 </div>
             </div>
         </header>
-        <div ui-view="content">
+        <div ui-view="content" autoscroll="true">
             <!-- Angular views -->
         </div>
 
@@ -112,12 +112,13 @@
     <script src="app/services/tutorial.service.js"></script>
     <script src="app/services/team.service.js"></script>
     <script src="app/services/tag.service.js"></script>
+    <script src="app/services/publication-category.service.js"></script>
     <script src="app/services/publication.service.js"></script>
     <script src="app/services/project.service.js"></script>
+    <script src="app/services/news-category.service.js"></script>
     <script src="app/services/news.service.js"></script>
     <script src="app/services/dataset.service.js"></script>
     <script src="app/services/data.service.js"></script>
-    <script src="app/services/category.service.js"></script>
     <script src="app/services/agency.service.js"></script>
     <script src="app/page/tutorial/tutorial.state.js"></script>
     <script src="app/page/tutorial/tutorial.controller.js"></script>
@@ -128,6 +129,8 @@
     <script src="app/page/project/project.state.js"></script>
     <script src="app/page/project/project.controller.js"></script>
     <script src="app/page/page.state.js"></script>
+    <script src="app/page/news/news-detail/news-detail.state.js"></script>
+    <script src="app/page/news/news-detail/news-detail.controller.js"></script>
     <script src="app/page/news/news.state.js"></script>
     <script src="app/page/news/news.controller.js"></script>
     <script src="app/page/dataset/dataset.state.js"></script>

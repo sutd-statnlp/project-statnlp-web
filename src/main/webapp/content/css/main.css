@@ -8,6 +8,9 @@
   color: white;
   text-decoration: none !important; }
 
+.m-color-white {
+  color: white !important; }
+
 .m-a-none {
   text-decoration: none !important; }
 
@@ -76,3 +79,10 @@
   min-height: calc(100vh - 150px); }
   .m-news .container img {
     width: 100%; }
+
+.m-news-detail .container {
+  padding-top: 20px;
+  min-height: calc(100vh - 150px); }
+
+.m-news-detail .heading {
+  margin: 0px; }

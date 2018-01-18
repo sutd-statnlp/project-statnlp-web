@@ -14,7 +14,8 @@
             byteSize: byteSize,
             openFile: openFile,
             toBase64: toBase64,
-            getArrayDataFromSheet: getArrayDataFromSheet
+            getArrayDataFromSheet: getArrayDataFromSheet,
+            getArrayFromTextWithSlashes: getArrayFromTextWithSlashes
         };
 
         return service;
@@ -84,6 +85,10 @@
                 array.push(item);
             }
             return array;
+        }
+
+        function getArrayFromTextWithSlashes(text){
+            return text.split('\\');
         }
     }
 })();
