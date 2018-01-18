@@ -23,8 +23,8 @@ const fileManifest = [
     "revision": "6b0e453869784a1e09074b86160d9689"
   },
   {
-    "url": "app/app-a55970c5ff.js",
-    "revision": "9b01fb9fefb54f0926c31e465e8b5d27"
+    "url": "app/app-c32f1e37ba.js",
+    "revision": "772558a2305d0105bb11ee3b97295400"
   },
   {
     "url": "app/vendor-7897dec923.js",
@@ -576,7 +576,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "9006b71815807aaa4424c16fd86b5432"
+    "revision": "8033112454ec564b68cdb86868954466"
   }
 ];
 
