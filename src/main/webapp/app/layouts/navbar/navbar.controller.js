@@ -29,6 +29,9 @@
                 navEle.removeClass('active');
                 ele.addClass('active');
             }
+            $('.navbar-brand').click(function() {
+                navEle.removeClass('active');
+            });
         });
     }
 })();
