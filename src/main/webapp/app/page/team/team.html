@@ -4,12 +4,12 @@
             <div ng-repeat="item in vm.teamMembers" class="col-md-2 col-sm-3">
                 <div class="team-member">
                     <div class="image">
-                        <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}">
+                        <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}" target="_blank">
                             <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive img-circle">
                         </a>
                     </div>
                     <h3>
-                        <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}" class="m-a-none">{{item.name}}</a>
+                        <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}" class="m-a-none" target="_blank">{{item.name}}</a>
                     </h3>
                     <p class="role">{{item.role}}</p>
                     <div class="social">
