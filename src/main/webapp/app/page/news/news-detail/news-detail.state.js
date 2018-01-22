@@ -10,7 +10,7 @@
     function stateConfig($stateProvider) {
         $stateProvider.state('news-detail', {
             parent: 'page',
-            url: '/news/{id}',
+            url: '/news/{endStart}/{id}',
             data: {
                 authorities: []
             },
@@ -20,11 +20,6 @@
                     controller: 'NewsDetailController',
                     controllerAs: 'vm'
                 }
-            },
-            resolve: {
-                entity: ['$stateParams', 'NewsService', function($stateParams, NewsService) {
-                    return null;
-                }]
             }
         });
     }

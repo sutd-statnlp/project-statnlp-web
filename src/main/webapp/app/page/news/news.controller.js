@@ -5,49 +5,60 @@
         .module('webApp')
         .controller('NewsController', NewsController);
 
-    NewsController.$inject = ['$scope', '$state', 'NewsService', 'DataUtils'];
+    NewsController.$inject = ['$scope', '$state', '$stateParams', 'NewsService', 'DataUtils', 'TagService', 'NewsCategoryService'];
 
-    function NewsController($scope, $state, NewsService, DataUtils) {
+    function NewsController($scope, $state, $stateParams, NewsService, DataUtils, TagService, NewsCategoryService) {
         var vm = this;
         vm.news = [];
         vm.promise = {};
-        vm.loadMoreNews = loadMoreNews;
-        var isRemaining = true;
-        var isLoading = false;
-        var moreNewStart = 1;
-        var moreNewEnd = 9;
-        var labels = [];
+        vm.category = $stateParams.category;
+        vm.tag = $stateParams.tag;
 
-        loadMoreNews();
+        loadNews();
+        loadCategories();
+        loadTags();
 
-        function loadMoreNews() {
-            if (isLoading)
-                return;
-            isLoading = true;
-            if (isRemaining)
-                vm.promise = NewsService.getNewsWithStartEnd(moreNewStart, moreNewEnd).getNews({}, onSuccess, onError);
+        function loadNews() {
+            if (vm.category && vm.tag) {
+                vm.promise = NewsService.getNewsByCategoryAndTag(vm.category.news, vm.tag.news).getNews({}, onSuccessByCategoryOrTag, onError);
+            } else {
+                if (vm.category) {
+                    vm.promise = NewsService.getNewsByCategoryOrTag(vm.category.news).getNews({}, onSuccessByCategoryOrTag, onError);
+                }
+                if (vm.tag) {
+                    vm.promise = NewsService.getNewsByCategoryOrTag(vm.tag.news).getNews({}, onSuccessByCategoryOrTag, onError);
+                }
+            }
+            if (!vm.tag && !vm.category) {
+                vm.promise = NewsService.getNews({}, onSuccess, onError);
+            }
 
             function onSuccess(data) {
-                if (data.values) {
-                    if (labels.length === 0)
-                        labels = data.values[0];
-                    else
-                        data.values.unshift(labels);
-                    pushNews(data);
-                    moreNewStart = moreNewEnd;
-                    moreNewEnd = moreNewStart + 6;
-                    isLoading = false;
-                } else
-                    isRemaining = false;
+                vm.news = DataUtils.getArrayDataFromSheet(data);
+            }
+
+            function onSuccessByCategoryOrTag(data) {
+                vm.news = DataUtils.getArrayFromSheetMultiRanges(data);
             }
         }
 
-        function pushNews(data) {
-            var news = DataUtils.getArrayDataFromSheet(data);
-            for (var i = 0; i < news.length; i++) {
-                vm.news.push(news[i]);
+
+        function loadTags() {
+            vm.promise = TagService.getTags({}, onSuccess, onError);
+
+            function onSuccess(data) {
+                vm.tags = DataUtils.getArrayDataFromSheet(data);
             }
         }
+
+        function loadCategories() {
+            vm.promise = NewsCategoryService.getCategories({}, onSuccess, onError);
+
+            function onSuccess(data) {
+                vm.categories = DataUtils.getArrayDataFromSheet(data);
+            }
+        }
+
 
         function onError(error) {
             console.log(error);

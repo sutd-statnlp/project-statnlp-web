@@ -1,37 +1,70 @@
 <section class="m-news">
     <div class="container">
         <div cg-busy="vm.promise"></div>
-        <div class="row" infinite-scroll="vm.loadMoreNews()" infinite-scroll-disabled='vm.isLoading' infinite-scroll-distance="1">
-            <div ng-repeat="item in vm.news" class="col-md-3 col-sm-6 m-news">
-                <div class="box-image-text blog">
-                    <div class="top">
-                        <div class="image">
-                            <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive">
+        <div class="row">
+            <div class="col-md-9">
+                <div ng-repeat="item in vm.news" class="col-md-3 col-sm-6 m-news">
+                    <div class="box-image-text blog">
+                        <div class="top">
+                            <div class="image">
+                                <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive">
+                            </div>
+                            <div class="bg"></div>
+                            <div class="text">
+                                <p class="buttons">
+                                    <a ui-sref="news-detail({endStart:item.endStart,id:item.id})" class="btn btn-template-transparent-primary">
+                                        <i class="fa fa-link"></i> Read more</a>
+                                </p>
+                            </div>
                         </div>
-                        <div class="bg"></div>
-                        <div class="text">
-                            <p class="buttons">
-                                <a ui-sref="news-detail({id:item.id})"  class="btn btn-template-transparent-primary">
-                                    <i class="fa fa-link"></i> Read more</a>
+                        <div class="content">
+                            <h5>
+                                <a ui-sref="news-detail({endStart:item.endStart,id:item.id})" class="text-capitalize m-a-none">{{item.title}}</a>
+                            </h5>
+                            <p class="author-category">
+                                {{item.date | date}}
+                                <br>
+                                <a href="">{{item.type}}</a>
                             </p>
                         </div>
                     </div>
-                    <div class="content">
-                        <h4>
-                            <a ui-sref="news-detail({id:item.id})"  class="text-capitalize m-a-none">{{item.title}}</a>
-                        </h4>
-                        <p class="author-category">By
-                            <a href="">{{item.date | date}}</a> in
-                            <a href="">{{item.type}}</a>
-                        </p>
+                    <!-- /.box-image-text -->
+
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="panel panel-default sidebar-menu">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Categories</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li ng-repeat="item in vm.categories" class="{{vm.category.name == item.name ? 'active' : ''}}">
+                                <a ui-sref="news({category: {name: item.name, news: item.news}})" ui-sref-opts="{reload: true}">{{item.name}}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
-                <!-- /.box-image-text -->
+                <div class="panel sidebar-menu">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tags</h3>
+                    </div>
 
+                    <div class="panel-body">
+                        <ul class="tag-cloud">
+                            <li ng-repeat="item in vm.tags" >
+                                <a ui-sref="news({tag: {name: item.name, news: item.news}})" ui-sref-opts="{reload: true}" class="{{vm.tag.name == item.name ? 'tag-active' : ''}}">
+                                    <i class="fa fa-tags"></i> {{item.name}}
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-           
         </div>
-        <div cg-busy="vm.promise"></div>
     </div>
 
 </section>

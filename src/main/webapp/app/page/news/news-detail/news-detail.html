@@ -1,4 +1,4 @@
-<section class="m-news-detail" >
+<section class="m-news-detail">
     <div class="container" cg-busy="vm.promise">
 
         <div class="row">
@@ -6,83 +6,21 @@
             <!-- *** LEFT COLUMN ***
     _________________________________________________________ -->
 
-            <div class="col-md-9" id="blog-post">
+            <div class="col-md-10" id="blog-post">
 
 
-                <p class="text-muted text-uppercase mb-small text-right">By
-                    <a href="">June 20, 2013</a> In
-                    <a href="">Reading Group</a>
+                <p class="text-muted text-uppercase mb-small text-right">
+                    By {{vm.news.date | date}} In {{vm.news.type}}
                 </p>
-                <h2>The retrofitting Word Vectors</h2>
+                <h2>{{vm.news.title}}</h2>
 
                 <div id="post-content">
-                    <blockquote>
+                    <blockquote ng-repeat="item in vm.news.content.split('//')">
                         <p>
-                            Vector space word representations are learned from distributional information of words in large corpora. Although such statistics
-                            are semantically informative, they disregard the valuable information that is contained in semantic
-                            lexicons such as WordNet, FrameNet, and the Paraphrase Database.
+                            {{item}}
                         </p>
                     </blockquote>
 
-                    <blockquote>
-                        This paper proposes a method for refining vector space representations using relational information from semantic lexicons
-                        by encouraging linked words to have similar vector representations, and it makes no assumptions about
-                        how the input vectors were constructed.
-                    </blockquote>
-                    <blockquote>
-                        Evaluated on a battery of standard lexical semantic evaluation tasks in several languages, we obtain substantial improvements
-                        starting with a variety of word vector models. Our refinement method outperforms prior techniques
-                        for incorporating semantic lexicons into word vector training algorithms.
-                    </blockquote>
-
-
-
-                </div>
-
-
-                <div>
-
-                    <div class="heading">
-                        <h5>Related News</h5>
-                    </div>
-                    <!-- *** BLOG HOMEPAGE ***
-                            _________________________________________________________ -->
-
-                    <div class="row">
-                        <div ng-repeat="item in vm.relatedNews" class="col-md-3 col-sm-6 m-news">
-                            <div class="box-image-text blog">
-                                <div class="top">
-                                    <div class="image">
-                                        <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive">
-                                    </div>
-                                    <div class="bg"></div>
-                                    <div class="text">
-                                        <p class="buttons">
-                                            <a ui-sref="news-detail({id:item.id})" class="text-capitalize m-a-none m-color-white">{{item.title}}</a>
-                                           
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="content">
-                                    <h4>
-
-                                    </h4>
-                                    <p class="author-category">By
-                                        <a href="">{{item.date | date}}</a> in
-                                        <a href="">{{item.tag}}</a>
-                                    </p>
-
-                                </div>
-                            </div>
-                            <!-- /.box-image-text -->
-
-                        </div>
-
-
-                    </div>
-                    <!-- /.row -->
-
-                    <!-- *** BLOG HOMEPAGE END *** -->
 
 
 
@@ -97,36 +35,34 @@
             <!-- *** RIGHT COLUMN ***
         _________________________________________________________ -->
 
-            <div class="col-md-3">
+            <div class="col-md-2">
 
                 <!-- *** MENUS AND WIDGETS ***
 _________________________________________________________ -->
 
                 <div class="panel panel-default sidebar-menu">
 
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Categories</h3>
-                    </div>
-
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
-                            <li ng-repeat="item in vm.categories">
-                                <a href="">{{item.name}}</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                            <li ng-repeat="item in vm.relatedNews">
+                                <div class="m-news-related">
+                                    <div class="box-image-text blog">
+                                        <div class="top">
+                                            <div class="image">
+                                                <img ng-src="{{item.imageUrl}}" alt="" class="img-responsive">
+                                            </div>
+                                            <div class="bg"></div>
+                                            <div class="text">
+                                                <p class="buttons">
+                                                    <a ui-sref="news-detail({endStart: item.endStart, id:item.id})" ui-sref-opts="{reload: true}" class="text-capitalize m-a-none m-color-white">{{item.title | limitTo: 30}}</a>
+                                                </p>
+                                            </div>
+                                        </div>
 
-                <div class="panel sidebar-menu">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Tags</h3>
-                    </div>
+                                    </div>
+                                    <!-- /.box-image-text -->
 
-                    <div class="panel-body">
-                        <ul class="tag-cloud">
-                            <li ng-repeat="item in vm.tags">
-                                <a href="">
-                                    <i class="fa fa-tags"></i> {{item.name}}</a>
+                                </div>
                             </li>
                         </ul>
                     </div>

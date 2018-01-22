@@ -5,6 +5,6 @@
         .module('webApp')
         .constant('VERSION', "0.0.1-SNAPSHOT")
         .constant('DEBUG_INFO_ENABLED', false)
-        .constant('BUILD_TIMESTAMP', 1516246183050)
+        .constant('BUILD_TIMESTAMP', 1516596266755)
 ;
 })();

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -7,7 +7,7 @@
 
     DataUtils.$inject = ['$window'];
 
-    function DataUtils ($window) {
+    function DataUtils($window) {
 
         var service = {
             abbreviate: abbreviate,
@@ -15,12 +15,14 @@
             openFile: openFile,
             toBase64: toBase64,
             getArrayDataFromSheet: getArrayDataFromSheet,
-            getArrayFromTextWithSlashes: getArrayFromTextWithSlashes
+            getArrayFromTextWithSlashes: getArrayFromTextWithSlashes,
+            getOneObjectFromSheet: getOneObjectFromSheet,
+            getArrayFromSheetMultiRanges: getArrayFromSheetMultiRanges
         };
 
         return service;
 
-        function abbreviate (text) {
+        function abbreviate(text) {
             if (!angular.isString(text)) {
                 return '';
             }
@@ -30,7 +32,7 @@
             return text ? (text.substring(0, 15) + '...' + text.slice(-10)) : '';
         }
 
-        function byteSize (base64String) {
+        function byteSize(base64String) {
             if (!angular.isString(base64String)) {
                 return '';
             }
@@ -60,11 +62,11 @@
             return formatAsBytes(size(base64String));
         }
 
-        function openFile (type, data) {
+        function openFile(type, data) {
             $window.open('data:' + type + ';base64,' + data, '_blank', 'height=300,width=400');
         }
 
-        function toBase64 (file, cb) {
+        function toBase64(file, cb) {
             var fileReader = new FileReader();
             fileReader.readAsDataURL(file);
             fileReader.onload = function (e) {
@@ -79,7 +81,7 @@
             for (var i = 1; i < data.values.length; i++) {
                 var item = {};
                 var values = data.values[i];
-                for(var j = 0; j< values.length; j++){
+                for (var j = 0; j < values.length; j++) {
                     item[attributes[j]] = values[j];
                 }
                 array.push(item);
@@ -87,7 +89,32 @@
             return array;
         }
 
-        function getArrayFromTextWithSlashes(text){
+        function getOneObjectFromSheet(data) {
+            var item = {};
+            var attributes = data.valueRanges[0].values[0];
+            var values = data.valueRanges[1].values[0];
+            for (var i = 0; i < attributes.length; i++) {
+                item[attributes[i]] = values[i];
+            }
+            return item;
+        }
+
+        function getArrayFromSheetMultiRanges(data) {
+            var array = [];
+            var attributes = data.valueRanges[0].values[0];
+            var ranges = data.valueRanges;
+            for (var i = 1; i < ranges.length; i++) {
+                var item = {};
+                var values = ranges[i].values[0];
+                for (var j = 0; j < attributes.length; j++) {
+                    item[attributes[j]] = values[j];
+                }
+                array.push(item);
+            }
+            return array;
+        }
+
+        function getArrayFromTextWithSlashes(text) {
             return text.split('\\');
         }
     }

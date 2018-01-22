@@ -86,3 +86,11 @@
 
 .m-news-detail .heading {
   margin: 0px; }
+
+.m-news-detail .m-news-related img {
+  width: 100%;
+  height: 100px; }
+
+.tag-active {
+  background-color: #1EAAF1;
+  color: white !important; }

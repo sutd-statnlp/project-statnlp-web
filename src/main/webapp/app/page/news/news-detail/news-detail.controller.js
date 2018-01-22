@@ -5,39 +5,34 @@
         .module('webApp')
         .controller('NewsDetailController', NewsDetailController);
 
-    NewsDetailController.$inject = ['$scope', '$state', 'entity','DataUtils','TagService','NewsCategoryService','NewsService'];
+    NewsDetailController.$inject = ['$scope', '$state', '$stateParams', 'DataUtils', 'NewsService'];
 
-    function NewsDetailController($scope, $state, entity,DataUtils,TagService,NewsCategoryService,NewsService) {
+    function NewsDetailController($scope, $state, $stateParams, DataUtils, NewsService) {
         var vm = this;
-        vm.news = entity;
+        vm.news = {};
+
         vm.promise = {};
         vm.relatedNews = [];
 
-        loadCategories();
-        loadTags();
-        loadRelatedNews();
 
-        function loadTags() {
-            vm.promise = TagService.getTags({}, onSuccess, onError);
+        loadNews();
+       
+
+        function loadNews() {
+            vm.promise = NewsService.getOneNewsByRange($stateParams.endStart).getOneNews({}, onSuccess, onError);
 
             function onSuccess(data) {
-                vm.tags = DataUtils.getArrayDataFromSheet(data);
+                vm.news = DataUtils.getOneObjectFromSheet(data);
+                loadRelatedNews(vm.news.relatedNews);
             }
         }
 
-        function loadCategories() {
-            vm.promise = NewsCategoryService.getCategories({}, onSuccess, onError);
+       
+        function loadRelatedNews(items) {
+            vm.promise = NewsService.getRelatedNewsByRanges(items).getRelatedNews({}, onSuccess, onError);
 
             function onSuccess(data) {
-                vm.categories = DataUtils.getArrayDataFromSheet(data);
-            }
-        }
-
-        function loadRelatedNews() {
-            vm.promise = NewsService.getNews({}, onSuccess, onError);
-
-            function onSuccess(data) {
-                vm.relatedNews = DataUtils.getArrayDataFromSheet(data).splice(1,4);
+                vm.relatedNews = DataUtils.getArrayFromSheetMultiRanges(data);
             }
         }
 
@@ -45,6 +40,6 @@
         function onError(error) {
             console.log(error);
         }
-       
+
     }
 })();
