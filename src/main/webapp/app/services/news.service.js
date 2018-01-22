@@ -9,15 +9,10 @@
     function NewsService($resource, DataService) {
 
         var resource = $resource('', {}, {
-            'getHotNews': {
-                method: 'GET',
-                cache: true,
-                url: DataService.getApiEndpoint('News', 'A1', 'H5')
-            },
             'getNews': {
                 method: 'GET',
                 cache: true,
-                url: DataService.getApiEndpoint('News', 'A1', 'H16')
+                url: DataService.getApiEndpoint('News', 'A1', 'L60')
             }
         });
 
@@ -79,7 +74,7 @@
         }
 
         function getNewsByCategoryAndTag(newsByCategory, newsByTag) {
-            var items = commonArray(newsByCategory.split(','),newsByTag.split(','));
+            var items = DataService.getCommonArray(newsByCategory.split(','),newsByTag.split(','));
             var localResource = $resource('', {}, {
                 'getNews': {
                     method: 'GET',
@@ -90,17 +85,7 @@
             return localResource;
         }
 
-        function commonArray(arr1, arr2) {
-            var newArr = [];
-            newArr = arr1.filter(function (v) {
-                return arr2.indexOf(v) >= 0;
-            });
-            newArr.concat(arr2.filter(function (v) {
-                return newArr.indexOf(v) >= 0;
-            }));
-
-            return newArr;
-        }
+        
 
     }
 })();

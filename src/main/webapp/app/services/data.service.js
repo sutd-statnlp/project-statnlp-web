@@ -30,8 +30,22 @@
         var service = {
             getApiEndpoint: getApiEndpoint,
             getApiEndpointTwoRanges: getApiEndpointTwoRanges,
-            getApiEndpointMultiRanges: getApiEndpointMultiRanges
+            getApiEndpointMultiRanges: getApiEndpointMultiRanges,
+            getCommonArray: getCommonArray
         };
         return service;
+
+        function getCommonArray(arr1, arr2) {
+            var newArr = [];
+            newArr = arr1.filter(function (v) {
+                return arr2.indexOf(v) >= 0;
+            });
+            newArr.concat(arr2.filter(function (v) {
+                return newArr.indexOf(v) >= 0;
+            }));
+
+            return newArr;
+        }
     }
 })();
+

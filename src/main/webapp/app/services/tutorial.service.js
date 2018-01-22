@@ -9,7 +9,7 @@
     function TutorialService($resource,DataService) {
 
         return $resource('', {}, {
-            'getTutorials': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Tutorial', 'A1', 'H8') }
+            'getTutorials': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Tutorial', 'A1', 'L60') }
         });
 
     }

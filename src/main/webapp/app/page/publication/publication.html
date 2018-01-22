@@ -6,6 +6,17 @@
 
                 <div class="panel panel-default sidebar-menu with-icons">
 
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Years</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li ng-repeat="item in vm.years" class="{{vm.year.title == item.title ? 'active' : ''}}">
+                                <a ui-sref="publication({year: {title: item.title, publications: item.publications}})" ui-sref-opts="{reload: true}">{{item.title}}</a>
+                            </li>
+                    </div>
+
                     <div class="panel panel-default sidebar-menu">
 
                         <div class="panel-heading">
@@ -14,33 +25,14 @@
 
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
-                                <li ng-repeat="item in vm.categories">
-                                    <a href="">{{item.name}}</a>
+                                <li ng-repeat="item in vm.categories" class="{{vm.category.name == item.name ? 'active' : ''}}">
+                                    <a ui-sref="publication({category: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}">{{item.name}}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Years</h3>
-                    </div>
 
-                    <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li class="active">
-                                <a href="">2017</a>
-                            </li>
-                            <li>
-                                <a href="">2016</a>
-                            </li>
-                            <li>
-                                <a href="">2015</a>
-                            </li>
-                            <li>
-                                <a href="">2008 - 2014</a>
-                            </li>
-
-                    </div>
 
                     <div class="panel sidebar-menu">
                         <div class="panel-heading">
@@ -50,7 +42,7 @@
                         <div class="panel-body">
                             <ul class="tag-cloud">
                                 <li ng-repeat="item in vm.tags">
-                                    <a href="">
+                                    <a ui-sref="publication({tag: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}" class="{{vm.tag.name == item.name ? 'tag-active' : ''}}">
                                         <i class="fa fa-tags"></i> {{item.name}}</a>
                                 </li>
                             </ul>

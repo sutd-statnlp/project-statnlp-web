@@ -12,7 +12,7 @@
             'getCategories': {
                 method: 'GET',
                 cache: true,
-                url: DataService.getApiEndpoint('PublicationCategory', 'A1', 'H10')
+                url: DataService.getApiEndpoint('PublicationCategory', 'A1', 'L60')
             }
         });
 

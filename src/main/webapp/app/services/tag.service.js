@@ -9,7 +9,7 @@
     function TagService($resource,DataService) {
 
         return $resource('', {}, {
-            'getTags': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Tag', 'A1', 'H10') }
+            'getTags': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Tag', 'A1', 'L60') }
         });
 
     }

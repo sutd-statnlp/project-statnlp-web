@@ -14,6 +14,11 @@
             data: {
                 authorities: []
             },
+            params: {
+                year: null,
+                category: null,
+                tag: null
+            },
             views: {
                 'content@': {
                     templateUrl: 'app/page/publication/publication.html',

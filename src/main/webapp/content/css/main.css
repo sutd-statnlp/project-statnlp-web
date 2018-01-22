@@ -22,7 +22,8 @@
   padding: 10px; }
 
 .m-home .m-news img {
-  width: 100%; }
+  width: 100%;
+  height: 160px; }
 
 .m-home .m-slide-ol li {
   margin: 4px;
@@ -78,7 +79,8 @@
   padding-top: 20px;
   min-height: calc(100vh - 150px); }
   .m-news .container img {
-    width: 100%; }
+    width: 100%;
+    height: 120px; }
 
 .m-news-detail .container {
   padding-top: 20px;

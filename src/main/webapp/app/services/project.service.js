@@ -8,10 +8,26 @@
 
     function ProjectService($resource,DataService) {
 
-        return $resource('', {}, {
-            'getLatestProjects': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Project', 'A1', 'H5') },
+        var resource =  $resource('', {}, {
             'getProjects': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Project', 'A1', 'H10') }
         });
 
+        var service = {
+            getProjects: resource.getProjects,
+            getProjectsByCategoryOrTag: getProjectsByCategoryOrTag
+        };
+        return service;
+
+        function getProjectsByCategoryOrTag(projectByCategoryOrTag) {
+            var items = projectByCategoryOrTag.split(',');
+            var localResource = $resource('', {}, {
+                'getProjects': {
+                    method: 'GET',
+                    cache: true,
+                    url: DataService.getApiEndpointMultiRanges('Project', 'A1', 'H1', 'Project', items)
+                }
+            });
+            return localResource;
+        }
     }
 })();

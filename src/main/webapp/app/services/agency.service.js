@@ -9,7 +9,7 @@
     function AgencyService($resource,DataService) {
 
         return $resource('', {}, {
-            'getAgencies': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Agency', 'A1', 'H10') }
+            'getAgencies': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Agency', 'A1', 'L60') }
         });
 
     }

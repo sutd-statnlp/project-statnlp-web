@@ -9,7 +9,7 @@
     function DatasetService($resource,DataService) {
 
         return $resource('', {}, {
-            'getDatasets': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Dataset', 'A1', 'H10') }
+            'getDatasets': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Dataset', 'A1', 'L60') }
         });
 
     }

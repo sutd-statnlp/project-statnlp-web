@@ -143,7 +143,7 @@
             _________________________________________________________ -->
 
                 <div class="row">
-                    <div ng-repeat="item in vm.news" class="col-md-3 col-sm-6 m-news">
+                    <div ng-repeat="item in vm.news.slice(0,4)" class="col-md-3 col-sm-6 m-news">
                         <div class="box-image-text blog">
                             <div class="top">
                                 <div class="image">
@@ -158,9 +158,9 @@
                                 </div>
                             </div>
                             <div class="content">
-                                <h4>
+                                <h5>
                                     <a ui-sref="news-detail({endStart:item.endStart,id:item.id})" class="text-capitalize m-a-none">{{item.title}}</a>
-                                </h4>
+                                </h5>
                                 <p class="author-category">By
                                     <a href="">{{item.date | date}}</a> in
                                     <a href="">{{item.tag}}</a>

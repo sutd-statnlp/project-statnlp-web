@@ -9,7 +9,8 @@
     function NewsCategoryService($resource,DataService) {
 
         return $resource('', {}, {
-            'getCategories': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'H10') }
+            'getCategories': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'L60') },
+            'getHotCategory': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'H2') }
         });
 
     }
