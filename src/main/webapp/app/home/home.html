@@ -49,12 +49,11 @@
                                 </div>
 
                                 <div class="col-sm-5">
-                                    <h2>Natural Language &amp Text processing</h2>
+                                    <h2>Natural Language processing</h2>
                                     <ul class="list-style-none">
                                         <li>novel and efficient algorithms</li>
                                         <li>fast prototyping </li>
-                                        <li>various structured prediction models</li>
-                                        <li>capable of modeling structures</li>
+                                        <li class="hidden-xs">capable of modeling structures</li>
                                     </ul>
                                     <p>
                                         <a href="http://visual.statnlp.tk" target="_blank" class="scroll-to btn btn-template-transparent-primary">Explore playground</a>
@@ -143,7 +142,7 @@
             _________________________________________________________ -->
 
                 <div class="row">
-                    <div ng-repeat="item in vm.news.slice(0,4)" class="col-md-3 col-sm-6 m-news">
+                    <div ng-repeat="item in vm.news.slice(0,4)" class="col-md-3 col-sm-6 col-xs-6 m-news">
                         <div class="box-image-text blog">
                             <div class="top">
                                 <div class="image">
@@ -165,7 +164,7 @@
                                     <a href="">{{item.date | date}}</a> in
                                     <a href="">{{item.tag}}</a>
                                 </p>
-                                <p class="intro">{{item.content | limitTo: 160 }}...</p>
+                                <p class="intro hidden-xs">{{item.content | limitTo: 160 }}...</p>
 
                             </div>
                         </div>

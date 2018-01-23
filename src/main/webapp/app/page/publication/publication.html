@@ -2,53 +2,47 @@
     <div class="container" cg-busy="vm.promise">
 
         <div class="row">
-            <div class="col-md-3">
-
+            <div class="col-md-3 col-sm-4">
                 <div class="panel panel-default sidebar-menu with-icons">
-
                     <div class="panel-heading">
                         <h3 class="panel-title">Years</h3>
                     </div>
-
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
                             <li ng-repeat="item in vm.years" class="{{vm.year.title == item.title ? 'active' : ''}}">
                                 <a ui-sref="publication({year: {title: item.title, publications: item.publications}})" ui-sref-opts="{reload: true}">{{item.title}}</a>
                             </li>
                     </div>
+                </div>
+                <div class="panel panel-default sidebar-menu with-icons">
 
-                    <div class="panel panel-default sidebar-menu">
-
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Categories</h3>
-                        </div>
-
-                        <div class="panel-body">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li ng-repeat="item in vm.categories" class="{{vm.category.name == item.name ? 'active' : ''}}">
-                                    <a ui-sref="publication({category: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}">{{item.name}}</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Categories</h3>
                     </div>
 
-
-
-                    <div class="panel sidebar-menu">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Tags</h3>
-                        </div>
-
-                        <div class="panel-body">
-                            <ul class="tag-cloud">
-                                <li ng-repeat="item in vm.tags">
-                                    <a ui-sref="publication({tag: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}" class="{{vm.tag.name == item.name ? 'tag-active' : ''}}">
-                                        <i class="fa fa-tags"></i> {{item.name}}</a>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li ng-repeat="item in vm.categories" class="{{vm.category.name == item.name ? 'active' : ''}}">
+                                <a ui-sref="publication({category: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}">{{item.name}}</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
+                <div class="panel sidebar-menu ">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tags</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <ul class="tag-cloud">
+                            <li ng-repeat="item in vm.tags">
+                                <a ui-sref="publication({tag: {name: item.name, publications: item.publications}})" ui-sref-opts="{reload: true}" class="{{vm.tag.name == item.name ? 'tag-active' : ''}}">
+                                    <i class="fa fa-tags"></i> {{item.name}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
 
 
                 <!-- *** MENUS AND FILTERS END *** -->

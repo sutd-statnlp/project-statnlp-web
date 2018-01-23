@@ -1,7 +1,7 @@
 <section class="m-team">
     <div class="container" cg-busy="vm.promise">
         <div class="row" >
-            <div ng-repeat="item in vm.teamMembers" class="col-md-2 col-sm-3">
+            <div ng-repeat="item in vm.teamMembers" class="col-md-2 col-xs-6 col-sm-4">
                 <div class="team-member">
                     <div class="image">
                         <a href="{{item.profileUrl == null ? 'javascript:void(0)' : item.profileUrl}}" target="_blank">
