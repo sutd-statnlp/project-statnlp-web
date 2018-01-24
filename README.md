@@ -7,3 +7,5 @@
     gulp
 
 ## Release
+
+- [Release versions](https://github.com/sutd-statnlp/project-statnlp-web/releases)
