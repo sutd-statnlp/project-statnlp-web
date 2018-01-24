@@ -5,3 +5,5 @@
     npm install
     bower install
     gulp
+
+## Release
