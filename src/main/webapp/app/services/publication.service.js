@@ -9,7 +9,7 @@
     function PublicationService($resource,DataService) {
 
         var resource =  $resource('', {}, {
-            'getPublications': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Publication', 'A1', 'H10') }
+            'getPublications': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Publication', 'A1', 'L10') }
         });
         
         var service = {

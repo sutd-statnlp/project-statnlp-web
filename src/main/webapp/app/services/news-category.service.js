@@ -10,7 +10,7 @@
 
         return $resource('', {}, {
             'getCategories': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'L60') },
-            'getHotCategory': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'H2') }
+            'getHotCategory': { method: 'GET', cache: true, url: DataService.getApiEndpoint('NewsCategory', 'A1', 'L2') }
         });
 
     }

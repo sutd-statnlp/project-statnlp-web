@@ -9,7 +9,7 @@
     function ProjectService($resource,DataService) {
 
         var resource =  $resource('', {}, {
-            'getProjects': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Project', 'A1', 'H10') }
+            'getProjects': { method: 'GET', cache: true, url: DataService.getApiEndpoint('Project', 'A1', 'L10') }
         });
 
         var service = {
