@@ -17,7 +17,7 @@
             'getLatestCategory': {
                 method: 'GET',
                 cache: true,
-                url: DataService.getApiEndpoint('ProjectCategory', 'A1', 'H2')
+                url: DataService.getApiEndpoint('ProjectCategory', 'A1', 'L2')
             }
         });
 

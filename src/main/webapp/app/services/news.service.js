@@ -32,7 +32,7 @@
                 'getNews': {
                     method: 'GET',
                     cache: true,
-                    url: DataService.getApiEndpoint('News', 'A' + start, 'H' + end)
+                    url: DataService.getApiEndpoint('News', 'A' + start, 'L' + end)
                 }
             });
             return localResource;
@@ -43,7 +43,7 @@
                 'getOneNews': {
                     method: 'GET',
                     cache: true,
-                    url: DataService.getApiEndpointTwoRanges('News', 'A1', 'H1', 'News', 'A' + endStart, 'H' + endStart)
+                    url: DataService.getApiEndpointTwoRanges('News', 'A1', 'H1', 'News', 'A' + endStart, 'L' + endStart)
                 }
             });
             return localResource;

@@ -160,10 +160,13 @@
                                 <h5>
                                     <a ui-sref="news-detail({endStart:item.endStart,id:item.id})" class="text-capitalize m-a-none">{{item.title}}</a>
                                 </h5>
-                                <p class="author-category">By
-                                    <a href="">{{item.date | date}}</a> in
-                                    <a href="">{{item.tag}}</a>
+                                <p class="author-category">
+                                   <strong>
+                                        {{item.date | date}}
+                                    <br> <span class="m-color-primary">{{item.type}}</span>
+                                   </strong>
                                 </p>
+
                                 <p class="intro hidden-xs">{{item.content | limitTo: 160 }}...</p>
 
                             </div>
